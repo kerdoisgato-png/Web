@@ -3,11 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>WebBuilder Ultra</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%237c3aed'/%3E%3Cstop offset='.5' stop-color='%2306b6d4'/%3E%3Cstop offset='1' stop-color='%23ec4899'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='22' fill='url(%23g)'/%3E%3Cpath d='M28 32l8 36 14-24 14 24 8-36' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='78' cy='24' r='6' fill='white' opacity='.9'/%3E%3C/svg%3E">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#08080f;--bg2:#0f0f1a;--bg3:#171725;--bg4:#222232;--border:rgba(255,255,255,.07);--border-hi:rgba(139,92,246,.5);--text:#f0f0ff;--muted:#8a8aa8;--muted2:#5c5c7a;--accent:#7c3aed;--accent2:#06b6d4;--accent3:#ec4899;--danger:#ef4444;--success:#10b981;--warn:#f59e0b;--glow:0 0 40px rgba(124,58,237,.5)}
+:root{--bg:#08080f;--bg2:#0f0f1a;--bg3:#171725;--bg4:#222232;--border:rgba(255,255,255,.07);--border-hi:rgba(139,92,246,.5);--text:#f0f0ff;--muted:#8a8aa8;--muted2:#5c5c7a;--accent:#7c3aed;--accent2:#06b6d4;--accent3:#ec4899;--danger:#ef4444;--success:#10b981;--warn:#f59e0b}
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter','Segoe UI',system-ui,sans-serif}
 html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-size:13px;-webkit-font-smoothing:antialiased}
 button,input,select,textarea{font-family:inherit}
@@ -43,6 +46,8 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-grad
 .splash-launch::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);pointer-events:none}
 .splash-launch:hover::after{animation:shimmer 1s ease forwards}
 .splash-footer{text-align:center;font-size:11px;color:var(--muted2);margin-top:22px;font-family:'JetBrains Mono',monospace}
+.splash-footer a{color:#a78bfa;text-decoration:none}
+.splash-footer a:hover{text-decoration:underline}
 @media(max-width:480px){
 .splash-card{padding:34px 22px;border-radius:22px}
 .splash-title{font-size:24px}
@@ -58,7 +63,7 @@ body::before{content:'';position:fixed;inset:0;z-index:-1;background:radial-grad
 .project-name:hover{border-color:var(--border-hi);background:rgba(255,255,255,.05);box-shadow:0 0 20px rgba(124,58,237,.15)}
 .project-name:focus{outline:none;border-color:var(--accent);background:rgba(124,58,237,.08);box-shadow:0 0 0 4px rgba(124,58,237,.15)}
 .spacer{flex:1}
-.tb-btn{background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:10px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:7px;height:38px;transition:all .25s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;font-weight:500;white-space:nowrap}
+.tb-btn{background:rgba(255,255,255,.03);border:1px solid var(--border);color:var(--text);padding:8px 14px;border-radius:10px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:7px;height:38px;transition:all .25s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;font-weight:500;white-space:nowrap;text-decoration:none}
 .tb-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(124,58,237,.15),rgba(6,182,212,.15));opacity:0;transition:opacity .3s}
 .tb-btn:hover{border-color:var(--border-hi);transform:translateY(-2px);box-shadow:0 8px 20px rgba(124,58,237,.2)}
 .tb-btn:hover::before{opacity:1}
@@ -644,8 +649,6 @@ kbd{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04
 .b-pc-price{font-size:40px;font-weight:900;margin-bottom:8px;letter-spacing:-2px;background:linear-gradient(135deg,#7c3aed,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .b-pc-item h4{margin:0 0 6px;font-size:16px;font-weight:700}
 .b-pc-item p{margin:0;opacity:.6;font-size:13px}
-.b-code-inline{padding:2px 8px;background:rgba(124,58,237,.1);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:.9em;color:#7c3aed}
-.b-services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .b-reviews{padding:60px 40px}
 .b-reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;max-width:1100px;margin:0 auto}
 .b-review-card{background:#fff;padding:28px;border-radius:18px;box-shadow:0 6px 26px rgba(0,0,0,.06);transition:all .35s cubic-bezier(.34,1.56,.64,1);border:1px solid rgba(0,0,0,.03)}
@@ -857,7 +860,7 @@ kbd{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04
 .b-cd-timer>div{padding:14px 18px;min-width:70px}
 .b-cd-timer span{font-size:32px}
 .b-nav,.b-nav-sticky{padding:14px 20px}
-.b-hero,.b-heading,.b-text,.b-features,.b-sec-title-wrap{padding-left:22px;padding-right:22px}
+.b-hero,.b-heading,.b-text,.b-features{padding-left:22px;padding-right:22px}
 .b-hero{padding:64px 22px}
 .b-hi-content h1{font-size:34px}
 .b-cta-gradient h2{font-size:32px}
@@ -885,6 +888,10 @@ kbd{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04
 </style>
 </head>
 <body>
+
+<script>
+try{if(location.search.indexOf('reset=1')>-1){localStorage.removeItem('wb_project');}}catch(e){}
+</script>
 
 <div class="splash" id="splash">
   <div class="splash-card">
@@ -925,9 +932,21 @@ kbd{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04
       <span>🚀</span> <span data-i18n="launch">Запустить редактор</span>
     </button>
 
-    <div class="splash-footer">v2.0 · Ultra Visual Edition</div>
+    <div class="splash-footer">v2.0 · Ultra Visual Edition · <a href="?reset=1">Сбросить</a></div>
   </div>
 </div>
+
+<script>
+(function(){
+  function forceSplash(){
+    if(location.search.indexOf('skip=1')>-1)return;
+    var s=document.getElementById('splash');
+    if(s){s.classList.remove('hide');s.style.display='flex';s.style.opacity='1';s.style.visibility='visible';}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',forceSplash);}else{forceSplash();}
+  window.addEventListener('pageshow',function(e){if(e.persisted)forceSplash();});
+})();
+</script>
 
 <div class="topbar">
   <div class="logo">WebBuilder Ultra</div>
@@ -941,7 +960,7 @@ kbd{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.04
   <button class="tb-btn" id="undoBtn" data-i18n-title="undo"><span>↶</span> <span data-i18n="undoLabel">Отменить</span> <span class="kbd-hint">Ctrl+Z</span></button>
   <button class="tb-btn" id="redoBtn" data-i18n-title="redo"><span>↷</span> <span data-i18n="redoLabel">Повторить</span> <span class="kbd-hint">Ctrl+Y</span></button>
   <button class="tb-btn" id="previewBtn"><span>👁️</span> <span data-i18n="preview">Просмотр</span></button>
-  <button class="tb-btn primary" id="exportBtn"><span>💾</span> <span data-i18n="download">Скачать ZIP</span></button>
+  <a class="tb-btn primary" id="exportBtn" download><span>💾</span> <span data-i18n="download">Скачать HTML</span></a>
 </div>
 
 <div class="main">
@@ -974,7 +993,7 @@ const I18N={
   optDemo:'Демо-страница',optDemoD:'Готовый пример',
   optRestore:'Восстановить',optRestoreD:'Последняя сессия',
   launch:'Запустить редактор',
-  preview:'Просмотр',download:'Скачать ZIP',projectName:'Название проекта',
+  preview:'Просмотр',download:'Скачать HTML',projectName:'Название проекта',
   search:'🔍 Поиск блоков...',undo:'Отменить (Ctrl+Z)',redo:'Повторить (Ctrl+Y)',
   undoLabel:'Отменить',redoLabel:'Повторить',
   emptyTitle:'Пустая страница',emptyTip:'Добавляй блоки слева',
@@ -987,7 +1006,7 @@ const I18N={
   groupAnim:'✨ Анимация появления',groupHover:'🖱 Hover-эффект',groupTransform:'🔄 Трансформация',
   bgNone:'Нет',bgColor:'Цвет',bgGradient:'Градиент',bgImage:'Фото',bgMesh:'Mesh',
   addItem:'Добавить',upload:'📁',reset:'Сброс',enabled:'Включено',disabled:'Включить',
-  toastAdded:'добавлен',toastDeleted:'Удалено',toastDup:'Дублировано',toastCopied:'Скопировано',toastPasted:'Вставлено',toastAnim:'Анимация применена',toastUpload:'Загружено',toastZip:'ZIP скачан!',toastPopup:'Разреши всплывающие окна',
+  toastAdded:'добавлен',toastDeleted:'Удалено',toastDup:'Дублировано',toastCopied:'Скопировано',toastPasted:'Вставлено',toastAnim:'Анимация применена',toastUpload:'Загружено',toastSaved:'Файл сохранён!',toastPopup:'Разреши всплывающие окна',
   actionUp:'Вверх',actionDown:'Вниз',actionDup:'Дублировать',actionCopy:'Копировать',actionDel:'Удалить'
  },
  en:{
@@ -998,7 +1017,7 @@ const I18N={
   optDemo:'Demo page',optDemoD:'Ready example',
   optRestore:'Restore',optRestoreD:'Last session',
   launch:'Launch editor',
-  preview:'Preview',download:'Download ZIP',projectName:'Project name',
+  preview:'Preview',download:'Download HTML',projectName:'Project name',
   search:'🔍 Search blocks...',undo:'Undo (Ctrl+Z)',redo:'Redo (Ctrl+Y)',
   undoLabel:'Undo',redoLabel:'Redo',
   emptyTitle:'Empty page',emptyTip:'Add blocks from the left',
@@ -1011,7 +1030,7 @@ const I18N={
   groupAnim:'✨ Entrance animation',groupHover:'🖱 Hover effect',groupTransform:'🔄 Transform',
   bgNone:'None',bgColor:'Color',bgGradient:'Gradient',bgImage:'Image',bgMesh:'Mesh',
   addItem:'Add',upload:'📁',reset:'Reset',enabled:'Enabled',disabled:'Enable',
-  toastAdded:'added',toastDeleted:'Deleted',toastDup:'Duplicated',toastCopied:'Copied',toastPasted:'Pasted',toastAnim:'Animation applied',toastUpload:'Uploaded',toastZip:'ZIP downloaded!',toastPopup:'Allow popups',
+  toastAdded:'added',toastDeleted:'Deleted',toastDup:'Duplicated',toastCopied:'Copied',toastPasted:'Pasted',toastAnim:'Animation applied',toastUpload:'Uploaded',toastSaved:'File saved!',toastPopup:'Allow popups',
   actionUp:'Up',actionDown:'Down',actionDup:'Duplicate',actionCopy:'Copy',actionDel:'Delete'
  }
 };
@@ -1081,7 +1100,7 @@ reviews:{name:'Отзывы со звёздами',icon:'🌟',cat:'Контен
 team:{name:'Команда',icon:'👥',cat:'Контент',defaults:()=>({title:'Наша команда',items:[{name:'Иван Иванов',role:'CEO',emoji:'👨‍💼'},{name:'Мария Петрова',role:'Дизайнер',emoji:'👩‍🎨'},{name:'Пётр Сидоров',role:'Разработчик',emoji:'👨‍💻'}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'Сотрудники',t:'array',if:[{k:'emoji',l:'Аватар',t:'icon'},{k:'name',l:'Имя',t:'text'},{k:'role',l:'Должность',t:'text'}],newItem:{emoji:'👤',name:'Новый',role:'Роль'}}]},
 teamSocial:{name:'Команда с соцсетями',icon:'🤝',cat:'Контент',defaults:()=>({title:'Наши люди',items:[{emoji:'👨‍💼',name:'Иван Иванов',role:'CEO',socials:'in,tg,gh'},{emoji:'👩‍🎨',name:'Мария Петрова',role:'Дизайнер',socials:'in,be,dr'},{emoji:'👨‍💻',name:'Пётр Сидоров',role:'Разработчик',socials:'gh,tw,in'}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'Сотрудники',t:'array',if:[{k:'emoji',l:'Аватар',t:'icon'},{k:'name',l:'Имя',t:'text'},{k:'role',l:'Должность',t:'text'},{k:'socials',l:'Соцсети',t:'text'}],newItem:{emoji:'👤',name:'Новый',role:'Роль',socials:'in,tg'}}]},
 faq:{name:'FAQ',icon:'❓',cat:'Контент',defaults:()=>({title:'Частые вопросы',items:[{q:'Как начать?',a:'Зарегистрируйтесь.'},{q:'Это бесплатно?',a:'Есть бесплатный тариф.'},{q:'Есть поддержка?',a:'Да, 24/7.'}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'Вопросы',t:'array',if:[{k:'q',l:'Вопрос',t:'text'},{k:'a',l:'Ответ',t:'textarea'}],newItem:{q:'Вопрос?',a:'Ответ'}}]},
-faqTwoCol:{name:'FAQ 2 колонки',icon:'❔',cat:'Контент',defaults:()=>({title:'Частые вопросы',items:[{q:'Как начать работу?',a:'Зарегистрируйтесь и выберите шаблон.'},{q:'Есть бесплатный тариф?',a:'Да, базовые функции бесплатны.'},{q:'Можно экспортировать код?',a:'Да, в ZIP-архив.'},{q:'Есть поддержка?',a:'Круглосуточно, 7 дней в неделю.'}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'Вопросы',t:'array',if:[{k:'q',l:'Вопрос',t:'text'},{k:'a',l:'Ответ',t:'textarea'}],newItem:{q:'Вопрос?',a:'Ответ'}}]},
+faqTwoCol:{name:'FAQ 2 колонки',icon:'❔',cat:'Контент',defaults:()=>({title:'Частые вопросы',items:[{q:'Как начать работу?',a:'Зарегистрируйтесь и выберите шаблон.'},{q:'Есть бесплатный тариф?',a:'Да, базовые функции бесплатны.'},{q:'Можно экспортировать код?',a:'Да, в один HTML-файл.'},{q:'Есть поддержка?',a:'Круглосуточно, 7 дней в неделю.'}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'Вопросы',t:'array',if:[{k:'q',l:'Вопрос',t:'text'},{k:'a',l:'Ответ',t:'textarea'}],newItem:{q:'Вопрос?',a:'Ответ'}}]},
 timeline:{name:'Таймлайн вертикальный',icon:'📅',cat:'Контент',defaults:()=>({title:'История',items:[{year:'2020',title:'Основание',text:'Начали с идеи'},{year:'2022',title:'Рост',text:'Вышли на рынок'},{year:'2024',title:'Расширение',text:'Открыли офисы'}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'События',t:'array',if:[{k:'year',l:'Год',t:'text'},{k:'title',l:'Заголовок',t:'text'},{k:'text',l:'Описание',t:'textarea'}],newItem:{year:'2025',title:'Событие',text:'Описание'}}]},
 timelineH:{name:'Таймлайн горизонтальный',icon:'📆',cat:'Контент',defaults:()=>({items:[{year:'2018',title:'Старт',desc:'Первые шаги'},{year:'2021',title:'Рост',desc:'1000 клиентов'},{year:'2023',title:'Масштаб',desc:'Мировой рынок'},{year:'2025',title:'Будущее',desc:'AI интеграция'}]}),content:[{k:'items',l:'События',t:'array',if:[{k:'year',l:'Год',t:'text'},{k:'title',l:'Заголовок',t:'text'},{k:'desc',l:'Описание',t:'text'}],newItem:{year:'2025',title:'Событие',desc:'Описание'}}]},
 progress:{name:'Прогресс-бары',icon:'📈',cat:'Контент',defaults:()=>({title:'Навыки',items:[{label:'JavaScript',value:90},{label:'Дизайн',value:75},{label:'Маркетинг',value:60}]}),content:[{k:'title',l:'Заголовок',t:'text'},{k:'items',l:'Навыки',t:'array',if:[{k:'label',l:'Название',t:'text'},{k:'value',l:'Значение %',t:'number'}],newItem:{label:'Навык',value:50}}]},
@@ -1134,10 +1153,10 @@ let clipboard=null;
 const history={stack:[],index:-1,max:60};
 
 function snapshot(){return JSON.stringify({blocks:state.blocks,theme:state.theme});}
-function pushHistory(){const s=snapshot();if(history.stack[history.index]===s)return;history.stack=history.stack.slice(0,history.index+1);history.stack.push(s);if(history.stack.length>history.max)history.stack.shift();history.index=history.stack.length-1;updateUndo();autoSave();}
+function pushHistory(){const s=snapshot();if(history.stack[history.index]===s)return;history.stack=history.stack.slice(0,history.index+1);history.stack.push(s);if(history.stack.length>history.max)history.stack.shift();history.index=history.stack.length-1;updateUndo();autoSave();setTimeout(updateDownloadLink,0);}
 function updateUndo(){const u=$('#undoBtn'),r=$('#redoBtn');if(u)u.disabled=history.index<=0;if(r)r.disabled=history.index>=history.stack.length-1;}
-function undo(){if(history.index<=0)return;history.index--;const d=JSON.parse(history.stack[history.index]);state.blocks=d.blocks;state.theme=d.theme;render();renderInspector();updateUndo();autoSave();}
-function redo(){if(history.index>=history.stack.length-1)return;history.index++;const d=JSON.parse(history.stack[history.index]);state.blocks=d.blocks;state.theme=d.theme;render();renderInspector();updateUndo();autoSave();}
+function undo(){if(history.index<=0)return;history.index--;const d=JSON.parse(history.stack[history.index]);state.blocks=d.blocks;state.theme=d.theme;render();renderInspector();updateUndo();autoSave();updateDownloadLink();}
+function redo(){if(history.index>=history.stack.length-1)return;history.index++;const d=JSON.parse(history.stack[history.index]);state.blocks=d.blocks;state.theme=d.theme;render();renderInspector();updateUndo();autoSave();updateDownloadLink();}
 function hexAlpha(hex,a){const h=hex.replace('#','');let r,g,b;if(h.length===3){r=parseInt(h[0]+h[0],16);g=parseInt(h[1]+h[1],16);b=parseInt(h[2]+h[2],16);}else{r=parseInt(h.substring(0,2),16);g=parseInt(h.substring(2,4),16);b=parseInt(h.substring(4,6),16);}return 'rgba('+r+','+g+','+b+','+a+')';}
 function normalizeVideoUrl(url){if(!url)return '';const yt=url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\s?]+)/);if(yt)return 'https://www.youtube.com/embed/'+yt[1]+'?rel=0';const vm=url.match(/vimeo\.com\/(?:video\/)?(\d+)/);if(vm)return 'https://player.vimeo.com/video/'+vm[1];return url;}
 
@@ -1280,7 +1299,7 @@ function buildInnerHTML(b){
     case 'timeline':return '<section class="b-timeline">'+(b.title?'<h2 class="b-sec-title">'+esc(b.title)+'</h2>':'')+'<div class="b-timeline-list">'+(b.items||[]).map(i=>'<div class="b-tl-item"><div class="b-tl-dot" style="background:linear-gradient(135deg,'+brand+','+brand2+')"></div><div class="b-tl-year" style="color:'+brand+'">'+esc(i.year)+'</div><div class="b-tl-content"><h4>'+esc(i.title)+'</h4><p>'+esc(i.text)+'</p></div></div>').join('')+'</div></section>';
     case 'timelineH':return '<section class="b-timeline-h"><div class="b-th-list">'+(b.items||[]).map(i=>'<div class="b-th-item"><div class="b-th-dot" style="background:linear-gradient(135deg,'+brand+','+brand2+')"></div><div class="b-th-year" style="color:'+brand+'">'+esc(i.year)+'</div><div class="b-th-title">'+esc(i.title)+'</div><div class="b-th-desc">'+esc(i.desc)+'</div></div>').join('')+'</div></section>';
     case 'progress':return '<section class="b-progress">'+(b.title?'<h2 class="b-sec-title">'+esc(b.title)+'</h2>':'')+'<div class="b-progress-list">'+(b.items||[]).map(i=>'<div class="b-progress-item"><div class="b-progress-label"><span>'+esc(i.label)+'</span><span style="color:'+brand+';font-weight:700">'+i.value+'%</span></div><div class="b-progress-bar"><div class="b-progress-fill" style="width:'+i.value+'%;background:linear-gradient(90deg,'+brand+','+brand2+')"></div></div></div>').join('')+'</div></section>';
-    case 'progressCircle':return '<section class="b-progress-circle">'+(b.items||[]).map((i,idx)=>{const v=Math.max(0,Math.min(100,+i.value||0));const r=54;const c=2*Math.PI*r;const off=c-(v/100)*c;const gid='pcg'+idx;return '<div class="b-pc-item"><div class="b-pc-svg"><svg width="130" height="130"><circle cx="65" cy="65" r="'+r+'" stroke="rgba(0,0,0,.08)" stroke-width="12" fill="none"/><circle cx="65" cy="65" r="'+r+'" stroke="url(#'+gid+')" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="'+c+'" stroke-dashoffset="'+off+'"/><defs><linearGradient id="'+gid+'"><stop offset="0" stop-color="'+brand+'"/><stop offset="1" stop-color="'+brand2+'"/></linearGradient></defs></svg><div class="b-pc-val">'+v+'%</div></div><div class="b-pc-label">'+esc(i.label)+'</div></div>';}).join('')+'</section>';
+    case 'progressCircle':return '<section class="b-progress-circle">'+(b.items||[]).map((i,idx)=>{const v=Math.max(0,Math.min(100,+i.value||0));const r=54;const c=2*Math.PI*r;const off=c-(v/100)*c;const gid='pcg'+idx+b.id;return '<div class="b-pc-item"><div class="b-pc-svg"><svg width="130" height="130"><circle cx="65" cy="65" r="'+r+'" stroke="rgba(0,0,0,.08)" stroke-width="12" fill="none"/><circle cx="65" cy="65" r="'+r+'" stroke="url(#'+gid+')" stroke-width="12" fill="none" stroke-linecap="round" stroke-dasharray="'+c+'" stroke-dashoffset="'+off+'"/><defs><linearGradient id="'+gid+'"><stop offset="0" stop-color="'+brand+'"/><stop offset="1" stop-color="'+brand2+'"/></linearGradient></defs></svg><div class="b-pc-val">'+v+'%</div></div><div class="b-pc-label">'+esc(i.label)+'</div></div>';}).join('')+'</section>';
     case 'steps':return '<section class="b-steps">'+(b.title?'<h2 class="b-sec-title">'+esc(b.title)+'</h2>':'')+'<div class="b-steps-grid">'+(b.items||[]).map(i=>'<div class="b-step"><div class="b-step-num" style="background:linear-gradient(135deg,'+brand+','+brand2+')">'+esc(i.num)+'</div><h4>'+esc(i.title)+'</h4><p>'+esc(i.text)+'</p></div>').join('')+'</div></section>';
     case 'stepsVertical':return '<section class="b-steps-v">'+(b.title?'<h2 class="b-sec-title">'+esc(b.title)+'</h2>':'')+'<div class="b-sv-list">'+(b.items||[]).map(i=>'<div class="b-sv-item"><div class="b-sv-num">'+esc(i.num)+'</div><h3>'+esc(i.title)+'</h3><p>'+esc(i.text)+'</p></div>').join('')+'</div></section>';
     case 'logos':return '<section class="b-logos">'+(b.title?'<h3 class="b-logos-title">'+esc(b.title)+'</h3>':'')+'<div class="b-logos-grid">'+(b.items||[]).map(l=>'<div class="b-logo">'+esc(l)+'</div>').join('')+'</div></section>';
@@ -1597,24 +1616,36 @@ function buildDemo(){
   const types=['navMega','heroGradient','logos','features','stats','imageText','pricing','testimonialBig','faq','ctaBanner','footerBig'];
   return types.map(tp=>{const b=BLOCKS[tp].defaults();b.type=tp;b.id=uid();b._style={};return b;});
 }
-function crc32Table(){if(window._crc)return window._crc;const t=[];for(let i=0;i<256;i++){let c=i;for(let j=0;j<8;j++)c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);t[i]=c;}window._crc=t;return t;}
-function crc32(bytes){const t=crc32Table();let c=0^(-1);for(let i=0;i<bytes.length;i++)c=(c>>>8)^t[(c^bytes[i])&0xFF];return (c^(-1))>>>0;}
-function makeZip(files){
-  const enc=new TextEncoder();
-  const chunks=[];const cd=[];let off=0;
-  files.forEach(f=>{
-    const nb=enc.encode(f.name);const cb=enc.encode(f.content);const crc=crc32(cb);const sz=cb.length;
-    const h=new Uint8Array(30+nb.length);const hv=new DataView(h.buffer);
-    hv.setUint32(0,0x04034b50,true);hv.setUint16(4,20,true);hv.setUint16(6,0,true);hv.setUint16(8,0,true);hv.setUint16(10,0,true);hv.setUint16(12,0,true);hv.setUint32(14,crc,true);hv.setUint32(18,sz,true);hv.setUint32(22,sz,true);hv.setUint16(26,nb.length,true);hv.setUint16(28,0,true);h.set(nb,30);
-    chunks.push(h,cb);
-    const c=new Uint8Array(46+nb.length);const cv=new DataView(c.buffer);
-    cv.setUint32(0,0x02014b50,true);cv.setUint16(4,20,true);cv.setUint16(6,20,true);cv.setUint8(8,0);cv.setUint8(9,0);cv.setUint16(10,0,true);cv.setUint16(12,0,true);cv.setUint16(14,0,true);cv.setUint32(16,crc,true);cv.setUint32(20,sz,true);cv.setUint32(24,sz,true);cv.setUint16(28,nb.length,true);cv.setUint16(30,0,true);cv.setUint16(32,0,true);cv.setUint16(34,0,true);cv.setUint16(36,0,true);cv.setUint32(38,0,true);cv.setUint32(42,off,true);c.set(nb,46);
-    cd.push(c);off+=h.length+cb.length;
-  });
-  const cdSize=cd.reduce((a,c)=>a+c.length,0);
-  const e=new Uint8Array(22);const ev=new DataView(e.buffer);
-  ev.setUint32(0,0x06054b50,true);ev.setUint16(4,0,true);ev.setUint16(6,0,true);ev.setUint16(8,files.length,true);ev.setUint16(10,files.length,true);ev.setUint32(12,cdSize,true);ev.setUint32(16,off,true);ev.setUint16(20,0,true);
-  return new Blob([...chunks,...cd,e],{type:'application/zip'});
+
+let _downloadUrl=null;
+function updateDownloadLink(){
+  const btn=document.getElementById('exportBtn');
+  if(!btn)return;
+  if(_downloadUrl){URL.revokeObjectURL(_downloadUrl);_downloadUrl=null;}
+  const html=buildSiteHTML();
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  _downloadUrl=URL.createObjectURL(blob);
+  const filename=(state.projectName||'site').replace(/[^\wа-яА-Я\-]+/g,'_')+'.html';
+  btn.href=_downloadUrl;
+  btn.setAttribute('download',filename);
+  btn.target='_blank';
+  btn.rel='noopener';
+}
+function exportZIP(){
+  updateDownloadLink();
+  const btn=document.getElementById('exportBtn');
+  if(!btn)return;
+  const tg=window.Telegram&&window.Telegram.WebApp;
+  if(tg&&tg.initData){
+    try{tg.openLink(btn.href,{try_instant_view:false});toast('Открываю в браузере для скачивания','info');return;}catch(e){}
+  }
+  try{
+    btn.click();
+    toast(t('toastSaved'),'success');
+  }catch(err){
+    window.open(btn.href,'_blank');
+    toast('Открыл в новой вкладке','info');
+  }
 }
 function collectSiteCSS(){
   const styles=$$('style').map(s=>s.textContent).join('\n');
@@ -1634,18 +1665,6 @@ function buildSiteHTML(){
   const animCSS=animEl?animEl.textContent:'';
   const siteCSS=collectSiteCSS();
   return '<!DOCTYPE html>\n<html lang="ru">\n<head>\n<meta charset="UTF-8">\n<meta name="viewport" content="width=device-width,initial-scale=1">\n<title>'+esc(state.projectName)+'</title>\n<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bebas+Neue&family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">\n<style>\n*{margin:0;padding:0;box-sizing:border-box}\nbody{font-family:'+th.font+';color:'+th.text+';background:'+th.bg+';line-height:1.6;max-width:'+th.maxWidth+'px;margin:0 auto;overflow-x:hidden}\nimg{max-width:100%;display:block}\na{color:inherit}\n'+siteCSS+'\n'+animCSS+'\n'+blockCSS+'\n'+customCSS+'\n</style>\n</head>\n<body>\n'+body+'\n</body>\n</html>';
-}
-function exportZIP(){
-  const html=buildSiteHTML();
-  const files=[{name:'index.html',content:html},{name:'README.txt',content:'Сайт «'+state.projectName+'»\nСоздано в WebBuilder Ultra Visual Edition\n\nОткрой index.html двойным кликом в браузере.'}];
-  const blob=makeZip(files);
-  const filename=(state.projectName||'site').replace(/[^\wа-яА-Я\-]+/g,'_')+'.zip';
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download=filename;
-  a.click();
-  setTimeout(()=>URL.revokeObjectURL(a.href),1000);
-  toast(t('toastZip'),'success');
 }
 function previewSite(){
   const w=window.open('','_blank');
@@ -1675,6 +1694,7 @@ function bootApp(){
   render();
   renderInspector();
   updateUndo();
+  updateDownloadLink();
 }
 function init(){
   $$('.lang-btn').forEach(btn=>btn.onclick=()=>setLang(btn.dataset.lang));
@@ -1698,7 +1718,7 @@ function init(){
   $('#projectName').addEventListener('input',e=>{state.projectName=e.target.value;scheduleHistory();});
   $('#undoBtn').onclick=undo;
   $('#redoBtn').onclick=redo;
-  $('#exportBtn').onclick=exportZIP;
+  $('#exportBtn').addEventListener('click',e=>{updateDownloadLink();});
   $('#previewBtn').onclick=previewSite;
   $$('#deviceSwitch button').forEach(btn=>btn.onclick=()=>{
     $$('#deviceSwitch button').forEach(b=>b.classList.remove('active'));
@@ -1716,8 +1736,10 @@ function init(){
     }else if(e.key==='Delete'&&state.selectedBlockId&&!inInput){e.preventDefault();delBlock(state.selectedBlockId);}
   });
   applyLang();
+  // Preload download link
+  setTimeout(updateDownloadLink,100);
 }
-init();
+try{init();}catch(err){console.error('Init error:',err);}
 </script>
 </body>
 </html>
